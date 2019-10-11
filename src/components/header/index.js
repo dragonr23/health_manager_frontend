@@ -23,12 +23,25 @@ class Header extends Component {
               <NavLink className="nav-link" to="/">Home <span className="sr-only"></span></NavLink>
             </li>
 
+            {
+              this.props.logged_in === true &&
+
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/Record">Record</NavLink>
+                </li>
+
+            }
+
           </ul>
           <ul className="navbar-nav ml-auto">
+
+
 
           <li className="nav-item">
             <NavLink className="nav-link" to="/Login">Login</NavLink>
           </li>
+
+
 
           {
             this.props.logged_in === false &&
@@ -38,6 +51,7 @@ class Header extends Component {
               </li>
 
           }
+
 
           {
             this.props.logged_in === true &&
