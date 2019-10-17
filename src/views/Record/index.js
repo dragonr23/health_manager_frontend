@@ -29,9 +29,7 @@ class Record extends Component {
     let self_harm = localStorage.getItem('self-harm')
     let mental_clarity = localStorage.getItem('mental')
 
-    if (sleep = null) {
-      sleep = 5
-    }
+
 
 
     const URL = 'http://localhost:5000/api/saverecord';
