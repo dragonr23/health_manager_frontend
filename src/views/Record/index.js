@@ -30,7 +30,28 @@ class Record extends Component {
     let mental_clarity = localStorage.getItem('mental')
 
 
+    let attributes = [user_id,
+                      sleep,
+                      nutrition,
+                      hydration,
+                      family,
+                      friends,
+                      intimate,
+                      vigorous,
+                      movement,
+                      standing,
+                      needed_work,
+                      creative_work,
+                      relaxed_state,
+                      substance_abuse,
+                      unhealthy_relationships,
+                      self_harm,
+                      mental_clarity]
 
+
+    for (let a of attributes) {
+      console.log(a)
+    }
 
     const URL = 'http://localhost:5000/api/saverecord';
 
