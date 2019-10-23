@@ -48,10 +48,15 @@ class Record extends Component {
                       self_harm,
                       mental_clarity]
 
+    console.log("NEEDED WORK ", needed_work)
 
-    for (let a of attributes) {
-      console.log(a)
-    }
+
+    // for (let a of attributes) {
+    //   console.log(a)
+    //   if (a == null) {
+    //     let a = 5
+    //   }
+    // }
 
     const URL = 'http://localhost:5000/api/saverecord';
 

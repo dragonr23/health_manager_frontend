@@ -25,6 +25,9 @@ class App extends Component {
   }
 }
 
+//probably be another funciton that saves the data...
+//honestly should be working with states
+
 handleLogin = async(e) => {
   e.preventDefault();
 
@@ -33,11 +36,15 @@ handleLogin = async(e) => {
 
   const URL = 'http://127.0.0.1:5000/authenticate/login';
 
+
   let token = jwt.sign(
     { 'email': email, 'password':password},
     SECRET_KEY,
     {expiresIn: '1h'}
   );
+
+
+
 
   let response = await fetch(URL, {
 
@@ -61,12 +68,19 @@ handleLogin = async(e) => {
   });
 
   let data2 = await response2.json()
+  // alert(data2)
+  // console.log(data2)
   let data = await response.json()
 
-  localStorage.setItem("id", data2["user"]["id"])
+  localStorage.setItem("id", data2["user"][0]["id"])
 
+  let user_id = data2['user'][0]['id']
+  //
+  console.log('THIS IS DATA')
   console.log(data);
-  console.log(data2["user"]["id"]);
+  console.log('THIS IS USER')
+  console.log(user_id);
+  // console.log(data2["user"]["id"]);
 
   //setup message saying logged in the water is fine or error
 
@@ -75,6 +89,22 @@ handleLogin = async(e) => {
 
     localStorage.setItem('token', data.token);
     localStorage.setItem('username', data.username)
+    localStorage.setItem('sleep',5)
+    localStorage.setItem('nutrition',5)
+    localStorage.setItem('hydration',5)
+    localStorage.setItem('family',5)
+    localStorage.setItem('friends',5)
+    localStorage.setItem('intimate',5)
+    localStorage.setItem('vigorous',5)
+    localStorage.setItem('movement',5)
+    localStorage.setItem('standing',5)
+    localStorage.setItem('work',5)
+    localStorage.setItem('creative',5)
+    localStorage.setItem('meditation',5)
+    localStorage.setItem('substance',5)
+    localStorage.setItem('unhealthy',5)
+    localStorage.setItem('self-harm',5)
+    localStorage.setItem('mental',5)
 
     alert('You are now logged in. The water is fine.')
   } else {
