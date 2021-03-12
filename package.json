@@ -34,7 +34,7 @@
     ]
   },
   "devDependencies": {
-    "react-dev-utils": "^9.0.3",
+    "react-dev-utils": "^11.0.4",
     "webpack-format-messages": "^2.0.5"
   }
 }
